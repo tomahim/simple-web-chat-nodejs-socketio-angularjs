@@ -12,9 +12,13 @@ function TchatCtrl($scope, socket) {
         $scope.messages.push(messageToDisplay(data));
     });
 
-	socket.on('user:join', function (user) {
-		$scope.users.push(user);
-		$scope.local_user = user;
+	socket.on('user:join', function (data) {
+		if(data.list) {
+			$scope.users = data.list;
+		}
+		if(data.new_one) {
+			$scope.local_user = data.new_one;
+		}
     });
 
 	$scope.sendMessage = function() {		
