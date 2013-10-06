@@ -10,8 +10,9 @@ html(ng-app="tchat")
 		script(src='/socket.io/socket.io.js')
 	body(ng-controller='TchatCtrl')
 		#content
-			div
-				div(ng-repeat="msg in messages") {{msg}}
+			div(ng-repeat="msg in messages") {{msg}}
 		.controls
 			input#field(ng-model='message')
 			input#send(type='button', value='Envoyer', ng-click='sendMessage()')
+		#users
+			div(ng-repeat="user in users") {{user}}
