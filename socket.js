@@ -1,20 +1,15 @@
-// export function for listening to the socket on the connection
+// list that will contains all the connected users
 var users = [];
 
+// export function for listening to the socket on the connection
 module.exports = function (socket) {	
 
     socket.on('disconnect', function () {
 		socket.broadcast.emit('send:message', {message : new_user.name + ' a quitté la discussion'});
-		users.splice(new_user.id-1, 1);
+		deleteUser(new_user);
     });
 
-    var new_user = {id : (users.length+1), name : generateGuestName()};
-    users.push(new_user);
-    console.log("**********************");
-    console.log(users);
-    console.log(users[0].name);
-    console.log("**********************");
-
+    var new_user = addUser();
     socket.emit('send:message', {message  : '*** Bienvenue sur le chat ' + new_user.name + ' ***' });
 
 	socket.broadcast.emit('send:message', {message : new_user.name + ' a rejoint la discussion'});
@@ -27,18 +22,44 @@ module.exports = function (socket) {
     });
 
     socket.on('user:join', function (data) {
-    	
+    	//nothing for now
     });
 };
 
 
-//Try to generate unique name
-function generateGuestName() {
-	var num = 1;
-	var name = 'Guest_' + num;
-	while(users[(num-1)] != null && users[(num-1)].name == name) {
-		num++;
-		name = 'Guest_' + num;
-	}
-	return name;
+//Add user to list with unique username
+function addUser() {
+    var new_user = {name : getUniqueUsername(), lastConnexion : new Date()};
+    users.push(new_user);
+	return new_user;
+}
+
+function getUniqueUsername() {
+    if(users.length == 0) {
+        return "Guest 1";
+    } else {
+        var i = 0;
+        var index = 0;
+        var unique_name = "";
+        do {
+            i++;
+            unique_name = "Guest " + i;
+            index = findUser({name : unique_name});
+        } while(index != -1);
+        return unique_name;
+    }
+}
+
+function deleteUser(user) {
+    var index = findUser(user);
+    if(index != -1) {
+        users.splice(index, 1);   
+    }
+}
+
+function findUser(user) {
+    for(var i = 0; i < users.length; i++) {
+        if (users[i].name == user.name) return i;
+    }
+    return -1;
 }

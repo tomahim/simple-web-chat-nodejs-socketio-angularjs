@@ -25,7 +25,7 @@ function TchatCtrl($scope, socket) {
 		var data = {message: $scope.message, user : $scope.local_user};
         socket.emit('send:message', data);
         
-        // add the message to our model locally
+        // add the message to the list of local client
 	    $scope.messages.push(messageToDisplay(data));
 
 	    // clear message box
