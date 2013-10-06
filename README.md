@@ -19,5 +19,6 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 - Edit username possibility
 - Creation of private chat rooms
 - Sharing medias like images, links ...
+- Add unit tests
 
 
