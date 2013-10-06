@@ -1,4 +1,4 @@
-# Simple Web Chat with node.js, socket.io and Angular.js
+# Real time Chat with socket.io, node.js and Angular.js
 
 Tutorial for building this web chat coming soon at http://www.tomarea.com/
 
