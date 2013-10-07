@@ -7,6 +7,7 @@ module.exports = function (socket) {
     socket.on('disconnect', function () {
 		socket.broadcast.emit('send:message', {message : new_user.name + ' left the conversation'});
 		deleteUser(new_user);
+        socket.broadcast.emit('user:exit', {list : users});        
     });
 
     var new_user = addUser();

@@ -21,6 +21,10 @@ function TchatCtrl($scope, socket) {
 		}
     });
 
+	socket.on('user:exit', function (data) {
+		$scope.users = data.list;
+	});
+
 	$scope.sendMessage = function() {		
 		var data = {message: $scope.message, user : $scope.local_user};
         socket.emit('send:message', data);
