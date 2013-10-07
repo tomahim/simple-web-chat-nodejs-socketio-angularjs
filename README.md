@@ -8,7 +8,10 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 2. Run <i>npm install</i> command at the root of the project to install dependencies
 3. Launch the web chat with the <i>node index.js</i> command
 
-## Features 
+
+## Releases
+
+#### v1.0 : Very basic chat, it can be use to learn how to build real time app
 
 - Communication between unlimited users
 - Display of a list of connected users
