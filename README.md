@@ -12,7 +12,7 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 ## Releases
 
 #### v1.0 : Very basic chat, it can be use to learn how to build real time app
-
+###### Features
 - Communication between unlimited users
 - Display of a list of connected users
 
