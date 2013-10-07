@@ -5,14 +5,14 @@ var users = [];
 module.exports = function (socket) {	
 
     socket.on('disconnect', function () {
-		socket.broadcast.emit('send:message', {message : new_user.name + ' a quitté la discussion'});
+		socket.broadcast.emit('send:message', {message : new_user.name + ' left the conversation'});
 		deleteUser(new_user);
     });
 
     var new_user = addUser();
-    socket.emit('send:message', {message  : '*** Bienvenue sur le chat ' + new_user.name + ' ***' });
+    socket.emit('send:message', {message  : '*** Welcome ' + new_user.name + ' ! ***' });
 
-	socket.broadcast.emit('send:message', {message : new_user.name + ' a rejoint la discussion'});
+	socket.broadcast.emit('send:message', {message : new_user.name + ' join the conversation'});
 
     socket.emit('user:join', {list : users, new_one : new_user});
     socket.broadcast.emit('user:join', {list : users});
