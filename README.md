@@ -13,7 +13,7 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 #### Procedure
 
 1. Clone the project
-2. Run `npm install` command at the root of the project to install dependencies
+2. Run `npm install` command at the root of the project (it install node modules dependencies and bower components)
 3. Launch the web chat with the `node index.js` command
 
 
