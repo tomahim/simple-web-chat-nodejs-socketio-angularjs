@@ -19,6 +19,7 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 
 ## Evolutions in progress
 
+- Use bower tool to load dependencies (as angular, ...)
 - Edit username possibility
 - Set a cookie to disallow the creation of a user when opening browser tabs
 - Creation of private chat rooms
