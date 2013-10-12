@@ -15,7 +15,8 @@ html(ng-app="tchat")
 					div(ng-repeat="msg in messages") {{msg}}
 				div.clearer
 				.controls
-					input#field(ng-model='message')
-					input#send(type='button', value='Envoyer', ng-click='sendMessage()')
+					form(ng-submit='sendMessage()')
+						input#field(ng-model='message')
+						input#send(type='submit', value='Envoyer')
 			ul#users
 				li(ng-repeat="user in users" ng-class-odd="'odd'") {{user.name}}
