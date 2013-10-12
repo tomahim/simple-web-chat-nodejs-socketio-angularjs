@@ -20,8 +20,11 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 ## Evolutions in progress
 
 - Edit username possibility
+- Set a cookie to disallow the creation of a user when opening browser tabs
 - Creation of private chat rooms
 - Sharing medias like images, links ...
 - Add unit tests
+- Store recent messages in local storage
+- Translate interface english/french
 
 
