@@ -2,11 +2,19 @@
 
 Tutorial for building this web chat coming soon at http://www.tomarea.com/
 
+## Prerequisites
+
+- Node.js and npm installed, see : http://nodejs.org/
+- Bower.io installed. If not already the case, just run this command `npm install -g bower`
+
+
 ## Installation
 
+#### Procedure
+
 1. Clone the project
-2. Run <i>npm install</i> command at the root of the project to install dependencies
-3. Launch the web chat with the <i>node index.js</i> command
+2. Run `npm install` command at the root of the project to install dependencies
+3. Launch the web chat with the `node index.js` command
 
 
 ## Releases
