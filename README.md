@@ -22,12 +22,11 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 #### v1.0 : Very basic chat, it can be use to learn how to build a real time app
 ###### Features
 - Communication between unlimited users
-- Display of a list of connected users
+- Display a list of connected users
 
 
 ## Evolutions in progress
 
-- Use bower tool to load dependencies (as angular, ...)
 - Edit username possibility
 - Set a cookie to disallow the creation of a user when opening browser tabs
 - Creation of private chat rooms
