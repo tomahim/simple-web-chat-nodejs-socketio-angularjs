@@ -27,6 +27,7 @@ Tutorial for building this web chat coming soon at http://www.tomarea.com/
 
 ## Evolutions in progress
 
+- Avoid send entire list of users in each join / exit event
 - Edit username possibility
 - Set a cookie to disallow the creation of a user when opening browser tabs
 - Creation of private chat rooms
